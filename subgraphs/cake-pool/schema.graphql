@@ -1,0 +1,12 @@
+
+type CakePool @entity{
+  id: ID!
+  users:[User!]! @derivedFrom(field: "pool")
+}
+
+type User @entity {
+  id: ID!
+  address: Bytes!
+  pool: CakePool!
+  stakeAmount: BigInt!
+}
